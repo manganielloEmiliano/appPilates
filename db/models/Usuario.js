@@ -10,7 +10,8 @@ const usuarioSchema = new Schema({
     telefono: { type: String, required: true },
     aptoFisico: { type: Boolean, required: true },
     roles: [{ type: String, enum: ['soporte', 'admin', 'empleado'], required: true }],
-    activo: { type: Boolean, default: true }
+    activo: { type: Boolean, default: true },
+    contraseña: { type: String, required: true }
 });
 
 const Usuario = mongoose.model('Usuario', usuarioSchema);
