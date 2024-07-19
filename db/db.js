@@ -1,3 +1,4 @@
+// db.js
 const mongoose = require('mongoose');
 
 // URI de conexión a MongoDB con autenticación
@@ -6,9 +7,7 @@ const uri = 'mongodb://mongo-user:123456@localhost:27017/admin'; // Cambia esto 
 const conectarDB = async () => {
     try {
         await mongoose.connect(uri, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            // Añade estas opciones para ver más detalles en los logs
+            // Eliminado useNewUrlParser y useUnifiedTopology
             serverSelectionTimeoutMS: 5000,
             socketTimeoutMS: 45000,
         });
@@ -20,4 +19,3 @@ const conectarDB = async () => {
 };
 
 module.exports = conectarDB;
-
